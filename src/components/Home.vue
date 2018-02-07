@@ -5,7 +5,7 @@
         <v-carousel-item v-for="(item,i) in items" v-bind:src="item.src" :key="i"></v-carousel-item>
     </v-carousel>
     <div class="categories">
-        <h2>CATEGORIES</h2>
+        <h2>CATEGORIES {{count}}</h2>
     </div>
     <div>
       <v-layout row wrap>
@@ -59,13 +59,13 @@
              <img src="http://box8.in/images/phone.2a6bf9f7.png"/>
         </v-flex>
         <v-flex xs12 sm6 lg3 md3>
-            <p class="offers-p">Avail attractive offers on your first order. Download today!</p>
+            <p class="offers-p">Avail attractive offers on your first order. Order today!</p>
         </v-flex>
         <v-flex xs12 sm6 lg3 md3 class="store">
-             <img src="http://box8.in/images/google-play.a22c1718.png"/>
+             <img src="https://muchoburrito.com/mucho-content/uploads/2017/06/unnamed2.png "/>
         </v-flex>
         <v-flex xs12 sm6 lg3 md3 class="store">
-             <img src="http://box8.in/images/app-store.81fb1ff2.png"/>
+             <img src="https://barburrito.co.uk/wp-content/uploads/2015/07/Burrito-Bowl.png"/>
         </v-flex>
       </v-layout>
     </div>
@@ -75,6 +75,16 @@
 <script>
 export default {
   name: 'Home',
+  methods: {
+    increment: () => {
+      this.$store.dispatch('increment')
+    }
+  },
+  computed: {
+    count () {
+      return this.$store.state.count
+    }
+  },
   data () {
     return {
       items: [
@@ -184,6 +194,7 @@ export default {
     padding-left: 10%;
 }
 .store img{
-    margin-top: 15%;
+    height: 150px;
+    margin-top: 10px;
 }
 </style>
