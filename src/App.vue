@@ -1,22 +1,19 @@
 <template>
-  <v-app>
-    <Header></Header>
-    <v-content>
-      <router-view/>
-    </v-content>
-    <Footer></Footer>
-  </v-app>
+  <component :is="currentView"></component>
 </template>
 
 <script>
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import AdminView from '@/components/Admin/Dashboard'
+import UserView from '@/components/User/Dashboard'
 export default {
-  data () {
-    return {
-    }
-  },
+  data: () => ({
+
+  }),
   name: 'App',
-  components: { Header, Footer }
+  computed: {
+    currentView () {
+      return this.$route.path === '/admin' ? AdminView : UserView
+    }
+  }
 }
 </script>
