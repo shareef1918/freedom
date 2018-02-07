@@ -73,27 +73,22 @@
 </template>
 
 <script>
-import {mapActions} from 'vuex'
-import {mapGetters} from 'vuex'
+import {mapActions, mapGetters} from 'vuex'
+
 export default {
   name: 'Home',
-  methods: {
-    increment: () => {
-      this.$store.dispatch('increment')
-    }
-  },
   computed: {
     ...mapGetters([
       'carousels',
       'recipes',
-      'features'
+      'features',
+      'count',
+      'isLoggedIn'
     ])
   },
-  data () {
-    return {
-      
-    }
-  }
+  methods: mapActions([
+    'increment'
+  ])
 }
 </script>
 

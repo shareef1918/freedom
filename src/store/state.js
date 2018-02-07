@@ -1,4 +1,6 @@
 export default {
+  count: 10,
+  isLoggedIn: false,
   recipes: [
     {
       src: 'https://www.cicis.com/media/1413/2ppr_websitecarousel_3200x1992.jpg?width=1920&quality=50'
@@ -65,4 +67,5 @@ export default {
       src: 'https://www.novozymes.com/-/media/Project/Novozymes/Website/website/advance-your-business/Baking/Baking_D_Carousel_4_Is_Acrulamide_regulated_1200x800.jpg?h=800&la=en&w=1200'
     }
   ],
+  users: []
 }
