@@ -1,6 +1,7 @@
 export default {
   count: 10,
   isLoggedIn: false,
+  userDetails: null,
   recipes: [
     {
       src: 'https://www.cicis.com/media/1413/2ppr_websitecarousel_3200x1992.jpg?width=1920&quality=50'
@@ -29,27 +30,27 @@ export default {
   ],
   features: [
     {
-      src: 'https://box8.in/images/features/1.492a0457.png',
+      src: 'https://cdn3.iconfinder.com/data/icons/complete-set-icons/512/graph.png',
       text: 'India\'s Fastest Growing Food Start-up'
     },
     {
-      src: 'https://box8.in/images/features/2.9b0e7a5a.png',
+      src: 'http://www.iconarchive.com/download/i86381/atyourservice/service-categories/Cooking.ico',
       text: 'Food For Every Kind Of Hunger'
     },
     {
-      src: 'https://box8.in/images/features/3.a51696c8.png',
-      text: 'Late Night Delivery'
+      src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrKI6RAZap_Do4Klrzl3Z6EAxMJsp16xXeg1l__yLIjiqIkqu8',
+      text: 'Supply in 30 mins'
     },
     {
-      src: 'https://box8.in/images/features/4.734cc3cb.png',
-      text: 'Free One Hour Delivery'
+      src: 'https://assets.materialup.com/uploads/d2feb47f-3d3c-4b05-8673-a2886e5f6aca/preview',
+      text: 'World Class Chefs'
     },
     {
-      src: 'https://box8.in/images/features/5.9c8fdb12.png',
-      text: 'Order On Web / App'
+      src: 'https://www.oit.va.gov/design-guide/_media/img/icons/divisions/qpr_icon_512.png',
+      text: 'Using Quality Items'
     },
     {
-      src: 'https://box8.in/images/features/6.2a2d0203.png',
+      src: 'http://eatbroosters.com/assets/art/our-food/icons/catering-menu-icon.svg',
       text: 'Party / Bulk Order Experts'
     }
   ],
