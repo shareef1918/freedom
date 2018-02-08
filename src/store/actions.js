@@ -32,8 +32,9 @@ export default {
     }
     return false
   },
-  logoutUser ({commit, state}) {
-    commit('loggedIn', false)
+  logoutUser ( {commit, state}) {
+    commit('loggedIn',false)
+    commit('userDetails', null)
     return true
   }
 }

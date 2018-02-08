@@ -7,6 +7,7 @@ import AdminMenu from '@/components/Admin/Menu'
 import Users from '@/components/Admin/Users'
 import Offers from '@/components/Admin/Offers'
 import Analytics from '@/components/Admin/Analytics'
+import Order from '@/components/User/Order'
 
 Vue.use(Router)
 
@@ -14,7 +15,13 @@ export default new Router({
   routes: [{
       path: '/',
       name: 'user-dashboard',
-      component: UserDashboard
+      component: UserDashboard,
+      children: []
+    },
+    {
+      path: '/order',
+      name: 'order',
+      component: Order 
     },
     {
       path: '/admin',

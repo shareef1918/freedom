@@ -4,6 +4,20 @@
     <v-carousel>
         <v-carousel-item v-for="(carousel,i) in carousels" v-bind:src="carousel.src" :key="i"></v-carousel-item>
     </v-carousel>
+
+    <div class="order-div elevation-10 red lighten-1" xs12 sm12 lg12 md12>
+      <v-layout row wrap>
+        <v-flex xs12 sm6 lg8 md8>
+            <p class="order-open">Order Are Opens For Delicious Lunch & Dinner</p>
+        </v-flex>
+        <v-flex xs12 sm6 lg4 md4>
+            <router-link :to="'order'">
+              <img src="http://www.northstarfootball.com/images/ordernow.png" width="200px" height="80px" class="order-img"/>
+            </router-link>
+        </v-flex>
+      </v-layout>
+    </div>
+
     <div class="categories">
         <h2>RECIPES</h2>
     </div>
@@ -96,6 +110,7 @@ export default {
 <style>
 .carousel{
     margin-top: 60px;
+    margin-bottom: 20px;
 }
 .categories h2{
     font-size: 20px;
@@ -128,6 +143,17 @@ export default {
 }
 .phone-pic{
     padding-left: 8%;
+}
+.order-img:hover{
+    cursor: pointer;
+}
+.order-open{
+    color:#fff;
+    font-style: italic;
+    font-size: 30px;
+    padding-top: 10px;
+    margin-left: 50px;
+    font-weight: bold;
 }
 .store img{
     height: 150px;
