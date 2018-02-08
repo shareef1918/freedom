@@ -1,3 +1,5 @@
+import state from './state'
+
 export default {
   increment (state) {
     state.count = state.count + 10
@@ -10,5 +12,11 @@ export default {
   },
   userDetails (state, user) {
     state.userDetails = user
+  },
+  setMenuForLunch (state, menu) {
+    state.menuForToday.lunch = menu
+  },
+  setMenuForDinner (state, menu) {
+    state.menuForToday.dinner = menu
   }
 }

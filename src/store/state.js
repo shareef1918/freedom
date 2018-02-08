@@ -2,34 +2,77 @@ export default {
   count: 10,
   isLoggedIn: false,
   userDetails: null,
-  recipes: [
-    {
-      src: 'https://www.cicis.com/media/1413/2ppr_websitecarousel_3200x1992.jpg?width=1920&quality=50'
+  recipes: [{
+      src: 'https://www.cicis.com/media/1413/2ppr_websitecarousel_3200x1992.jpg?width=1920&quality=50',
+      name: 'Pizza',
+      Phalf: 280,
+      Pfull: 170,
+      units: 200,
+      tOrders: 80,
+
     },
     {
-      src: 'https://www.kayemfoods.com/images/default-source/kayem-foods-carousel/corp-websiteredesign_carousel-r6-af.jpg?sfvrsn=0'
+      src: 'https://www.kayemfoods.com/images/default-source/kayem-foods-carousel/corp-websiteredesign_carousel-r6-af.jpg?sfvrsn=0',
+      name: 'Ice cream sandwich',
+      Phalf: 237,
+      Pfull: 150,
+      units: 500,
+      tOrders: 90,
     },
     {
-      src: '//img.aws.livestrongcdn.com/ls-article-image-673/ds-photo/getty/article/64/85/478021799.jpg'
+      src: '//img.aws.livestrongcdn.com/ls-article-image-673/ds-photo/getty/article/64/85/478021799.jpg',
+      name: 'Mexican Chicken',
+      Phalf: 262,
+      Pfull: 16.0,
+      units: 23,
+      tOrders: 100,
     },
     {
-      src: 'https://www.novozymes.com/-/media/Project/Novozymes/Website/website/advance-your-business/Baking/Baking_D_Carousel_4_Is_Acrulamide_regulated_1200x800.jpg?h=800&la=en&w=1200'
+      src: 'https://www.novozymes.com/-/media/Project/Novozymes/Website/website/advance-your-business/Baking/Baking_D_Carousel_4_Is_Acrulamide_regulated_1200x800.jpg?h=800&la=en&w=1200',
+      name: 'Cupcake',
+      Phalf: 305,
+      Pfull: 600,
+      units: 67,
+      tOrders: 10,
     },
     {
-      src: 'http://wirally.com/wp-content/uploads/2016/01/hdwallpaperbackgrounds-net-534x300.jpg'
+      src: 'http://wirally.com/wp-content/uploads/2016/01/hdwallpaperbackgrounds-net-534x300.jpg',
+      name: 'Gingerbread',
+      Phalf: 356,
+      Pfull: 700,
+      units: 49,
+      tOrders: 89,
     },
     {
-      src: 'https://s4.scoopwhoop.com/son/t/t3.jpg'
+      src: 'https://s4.scoopwhoop.com/son/t/t3.jpg',
+      name: 'Jelly bean',
+      Phalf: 375,
+      Pfull: 800,
+      units: 94,
+      tOrders: 90,
     },
     {
-      src: 'http://www.smartcityfood.in/media/catalog/product/cache/24/image/800x600/f31b0cfd465b5145025020710a9577fb/c/h/chicken-pakoda.jpg'
+      src: 'http://www.smartcityfood.in/media/catalog/product/cache/24/image/800x600/f31b0cfd465b5145025020710a9577fb/c/h/chicken-pakoda.jpg',
+      name: 'Lollipop',
+      Phalf: 392,
+      Pfull: 900,
+      units: 98,
+      tOrders: 70,
     },
     {
-      src: 'http://hdwallpapers.move.pk/wp-content/uploads/2015/02/hot-pizza.jpg'
+      src: 'http://hdwallpapers.move.pk/wp-content/uploads/2015/02/hot-pizza.jpg',
+      name: 'Honeycomb',
+      Phalf: 408,
+      Pfull: 1000,
+      units: 87,
+      tOrders: 33,
     }
   ],
-  features: [
-    {
+  menuForToday: [{
+    lunch: [],
+    dinner: []
+  }],
+  features: [{
       src: 'https://cdn3.iconfinder.com/data/icons/complete-set-icons/512/graph.png',
       text: 'India\'s Fastest Growing Food Start-up'
     },
@@ -54,8 +97,7 @@ export default {
       text: 'Party / Bulk Order Experts'
     }
   ],
-  carousels: [
-    {
+  carousels: [{
       src: 'https://www.cicis.com/media/1413/2ppr_websitecarousel_3200x1992.jpg?width=1920&quality=50'
     },
     {
