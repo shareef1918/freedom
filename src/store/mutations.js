@@ -18,5 +18,19 @@ export default {
   },
   setMenuForDinner (state, menu) {
     state.menuForToday.dinner = menu
+  },
+  addItem (state, item) {
+    state.cart.push(item)
+  },
+  updateItem (state, data ){
+    state.cart[data.index] = data.item
+  },
+  updateCartTotal (state, total){
+    state.grandTotal = total
+  },
+  placeOrder ( state, order) {
+    state.orders.push(order);
+    state.cart = [];
+    state.grandTotal = 0
   }
 }
