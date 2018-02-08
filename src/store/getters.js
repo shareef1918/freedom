@@ -13,5 +13,8 @@ export default {
   },
   isLoggedIn: state => {
     return state.isLoggedIn
+  },
+  users: stat => {
+    return stat.users
   }
 }
