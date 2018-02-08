@@ -95,6 +95,7 @@
          </div>
       </v-container>
       <Footer></Footer>
+     
    </v-app>
 </template>
 
@@ -105,43 +106,43 @@ import Home from '../User/Home'
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'Order',
-  data () {
-    return {
-      snackbar: false,
-      message: null,
-      drawer: false,
-      timeout: 3000,
-      items: ['Lunch', 'Dinner'],
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-    }
-  },
-  computed: {
-    ...mapGetters([
-      'recipes',
-      'menuForToday',
-      'cartData',
-      'grandTotal',
-      'isLoggedIn'
-    ])
-  },
-  methods: {
-    addItem (item) {
-      this.$store.dispatch('addItem', item)
-      .then((data) =>{
-        this.snackbar = true
-        this.message = 'Cart Updated Successfully'
-      })
+    name: 'Order',
+    data() {
+        return {
+            snackbar: false,
+            message: null,
+            drawer: false,
+            timeout: 3000,
+            items: ['Lunch', 'Dinner'],
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        }
     },
-    placeOrder(){
-      this.$store.dispatch('placeOrder')
-      .then((data) => {
-        this.snackbar = true
-        this.message = 'Your Order Successfully'
-      })
-    }
-  },
-  components: { Header, Footer, Home }
+    computed: {
+        ...mapGetters([
+            'recipes',
+            'menuForToday',
+            'cartData',
+            'grandTotal',
+            'isLoggedIn'
+        ])
+    },
+    methods: {
+        addItem(item) {
+            this.$store.dispatch('addItem', item)
+                .then((data) => {
+                    this.snackbar = true
+                    this.message = 'Cart Updated Successfully'
+                })
+        },
+        placeOrder() {
+            this.$store.dispatch('placeOrder')
+                .then((data) => {
+                    this.snackbar = true
+                    this.message = 'Your Order Successfully'
+                })
+        }
+    },
+    components: { Header, Footer, Home }
 }
 </script>
 
