@@ -6,22 +6,22 @@
             <v-tabs-bar class="cyan" dark>
             <v-tabs-slider class="yellow"></v-tabs-slider>
             <v-tabs-item class="tab-items"
-                v-for="i in items"
-                :key="i"
-                :href="'#tab-' + i"
+                v-for="(value,key,index) in menuForToday"
+                :key="index"
+                :href="'#tab-' + index"
             >
-                {{ i }}
+            {{key}}
             </v-tabs-item>
             </v-tabs-bar>
             <v-tabs-items>
             <v-tabs-content
-                v-for="i in items"
-                :key="i"
-                :id="'tab-' + i"
+                v-for="(value,key,index) in menuForToday"
+                :key="index"
+                :id="'tab-' + index"
             >
                 <v-card flat>
                     <v-layout row wrap>
-                        <v-flex xs12 sm6 lg3 md3 v-for="(recipes,i) in recipes" v-bind:src="i" :key="i">
+                        <v-flex xs12 sm6 lg3 md3 v-for="(recipes,i) in value" v-bind:src="i" :key="i">
                             <v-card>
                                 <v-card-media
                                 class="white--text"
@@ -31,7 +31,7 @@
                                 <v-container fill-height fluid>
                                     <v-layout fill-height>
                                     <v-flex xs12 align-end flexbox>
-                                        <span class="headline">Top 10 Australian beaches</span>
+                                        <span class="headline">{{recipes.name}}</span>
                                     </v-flex>
                                     </v-layout>
                                 </v-container>
@@ -75,7 +75,8 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'recipes'
+      'recipes',
+      'menuForToday'
     ])
   },
   components: { Header, Footer, Home }
@@ -88,5 +89,8 @@ export default {
 }
 .tab-items{
     font-weight: bold !important;
+}
+.flex{
+    padding: 10px
 }
 </style>
