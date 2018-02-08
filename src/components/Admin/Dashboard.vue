@@ -103,8 +103,8 @@ export default {
       // window.location.href = `${window.location.origin}/#/login`;
     },
     changeRoute (item) {
-      this.currentRoute = item.link;
-      this.$router.push({ name: item.link });
+      this.currentRoute = item.link
+      this.$router.push({ name: item.link })
     }
   }
 }

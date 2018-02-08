@@ -8,9 +8,6 @@ export default {
   features: state => {
     return state.features
   },
-  count: state => {
-    return state.count
-  },
   isLoggedIn: state => {
     return state.isLoggedIn
   },

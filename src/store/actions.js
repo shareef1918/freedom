@@ -28,6 +28,7 @@ export default {
   },
   logoutUser ( {commit, state}) {
     commit('loggedIn',false)
+    commit('userDetails', null)
     return true
   }
 }

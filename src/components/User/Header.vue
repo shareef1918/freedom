@@ -1,6 +1,11 @@
 <template>
   <v-toolbar color="primary" fixed="fixed">
-    <v-toolbar-title>FREEDOM</v-toolbar-title>
+    <v-toolbar-title>
+      <router-link :to="'/'" class="title">
+        <img src="https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/eat-circle-orange-512.png" class="logo"/>
+        FREEDOM
+      </router-link>
+    </v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-side-icon class="hidden-md-and-up" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
     <v-toolbar-items class="hidden-sm-and-down">
@@ -93,15 +98,10 @@
     </v-card>
     </v-dialog>
 
-    <v-dialog v-model="offers" max-width="500">
+    <v-dialog v-model="offers" max-width="680">
       <v-card>
-        <v-card-title class="headline">Use Google's location service?</v-card-title>
-        <v-card-text>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Disagree</v-btn>
-          <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Agree</v-btn>
-        </v-card-actions>
+        <v-card-title class="headline">Attractive Offers On the way</v-card-title>
+        <img src="https://png.pngtree.com/templates/md/20171221/md_5a3c02426ae79.jpg"/>
       </v-card>
     </v-dialog>
 
@@ -164,10 +164,10 @@ export default {
     ])
   },
   methods: {
-    resetRegForm(){
+    resetRegForm () {
       this.$refs.regForm.reset()
     },
-    resetLoginForm(){
+    resetLoginForm () {
       this.$refs.loginForm.reset()
     },
     signup () {
@@ -179,7 +179,7 @@ export default {
         }
         this.$store.dispatch('registerUser', userObj)
         .then((data) => {
-          if(data){
+          if (data) {
             this.registerDialog = false
             this.snackbar = true
             this.message = 'Registered Successfully'
@@ -243,6 +243,15 @@ export default {
 .dialog-title{
   text-align: center;
   font-size: 18px;
+}
+.toolbar__title a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 40px !important;
+}
+.logo{
+  height: 40px;
+  width: 40px;
 }
 </style>
 
