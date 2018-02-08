@@ -1,4 +1,3 @@
 <template>
-  <router-view/>
+  <h1>Offers</h1>
 </template>
-

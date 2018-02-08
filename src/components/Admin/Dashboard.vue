@@ -45,7 +45,7 @@
         
         >
          
-         <!-- <router-view/> -->
+         <router-view/>
         </v-layout>
       </v-container>
     </v-content>
@@ -65,11 +65,11 @@ export default {
     drawer: null,
     defaultImage: 'src/assets/logo.jpg',
     menuItems: [
-      { index: 0, name: 'Dashboard', icon: 'dashboard', link: 'home' },
+      { index: 0, name: 'Dashboard', icon: 'dashboard', link: 'admin-home' },
       { index: 1, name: 'Users', icon: 'face', link: 'users' },
-      { index: 2, name: 'Menu', icon: 'format_list_numbered', link: 'groups' },
-      { index: 3, name: 'Offer', icon: 'star', link: 'projects' },
-      { index: 4, name: 'Analytics', icon: 'donut_small', link: 'reports' }
+      { index: 2, name: 'Menu', icon: 'format_list_numbered', link: 'admin-menu' },
+      { index: 3, name: 'Offers', icon: 'star', link: 'offers' },
+      { index: 4, name: 'Analytics', icon: 'donut_small', link: 'analytics' }
     ]
   }),
   props: {
@@ -103,8 +103,8 @@ export default {
       // window.location.href = `${window.location.origin}/#/login`;
     },
     changeRoute (item) {
-      // this.currentRoute = item.link;
-      // this.$router.push({ name: item.link });
+      this.currentRoute = item.link;
+      this.$router.push({ name: item.link });
     }
   }
 }
