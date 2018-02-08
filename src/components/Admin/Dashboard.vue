@@ -22,7 +22,7 @@
     <v-toolbar  clipped-left color="indigo" dark fixed app>
       
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>FREEDOM</v-toolbar-title>
+      <v-toolbar-title style="font-family: Merienda One">FREEDOM</v-toolbar-title>
      <v-layout d-flex >
        <v-menu align-content-end offset-y v-model="showMenu" absolute full-width transition="slide-x-transition"
       bottom

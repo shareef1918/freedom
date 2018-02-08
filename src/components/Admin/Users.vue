@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h1>Users</h1>
+    <h1 style="text-align:center">Users</h1>
    <v-data-table
       v-model="selected"
       v-bind:headers="headers"
@@ -50,43 +50,57 @@
 
 </template>
 <script>
-import {mapActions, mapGetters} from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
-   data () {
-      return {
-        pagination: {
-          sortBy: 'name'
+  data() {
+    return {
+      pagination: {
+        sortBy: 'name'
+      },
+      selected: [],
+      headers: [
+        {
+          text: 'User Name',
+          align: 'left',
+          value: 'username'
         },
-        selected: [],
-        headers: [
-          {
-            text: 'User Name',
-            align: 'left',
-            value: 'username'
-          },
-          { text: 'Email', value: 'email' },
-          { text: 'Phone Number', value: 'pNumber' },
-          { text: 'Total Orders', value: 'tOrders' },
-        ],
-        items: [
-          {
-            value: false,
-            name: 'Tarique',
-            email: 'tariquehussain@xyz.com',
-            pNumber: 9804551286,
-            tOrders: 20,
-          },
-          {
-            value: false,
-            name: 'Mastann',
-            email: 'mastannSayyed@xtz.com',
-            pNumber: 9980765342,
-            tOrders: 500,
-          },
-        ]
-      }
+        { text: 'Email', value: 'email' },
+        { text: 'Phone Number', value: 'pNumber' },
+        { text: 'Total Orders', value: 'tOrders' },
+      ],
+      items: [
+        {
+          value: false,
+          name: 'Tarique',
+          email: 'tariquehussain@xyz.com',
+          pNumber: 9804551286,
+          tOrders: 20,
+        },
+        {
+          value: false,
+          name: 'Mastann',
+          email: 'mastannSayyed@xtz.com',
+          pNumber: 9980765342,
+          tOrders: 500,
+        },
+      ]
+    }
+  },
+  methods: {
+    toggleAll() {
+      if (this.selected.length) this.selected = []
+      else this.selected = this.items.slice()
     },
-   computed: {
+    changeSort(column) {
+      if (this.pagination.sortBy === column) {
+        this.pagination.descending = !this.pagination.descending
+      } else {
+        this.pagination.sortBy = column
+        this.pagination.descending = false
+      }
+    }
+  },
+  computed: {
     ...mapGetters([
       'users'
     ])

@@ -1,9 +1,9 @@
 <template>
   <v-toolbar color="primary" fixed="fixed">
     <v-toolbar-title>
-      <router-link :to="'/'" class="title">
+      <router-link :to="'/'" class="title" style="font-family: Merienda One">
         <img src="https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/eat-circle-orange-512.png" class="logo"/>
-        FREEDOM
+        Freedom
       </router-link>
     </v-toolbar-title>
     <v-spacer></v-spacer>

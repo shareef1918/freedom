@@ -10,6 +10,7 @@ export default {
         {
           label: 'Monthly Sales',
           backgroundColor: '#f87979',
+          color: '#000',
           data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
         }
       ]
