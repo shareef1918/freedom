@@ -215,6 +215,7 @@ export default {
       .then((data) => {
         this.snackbar = true
         this.message = 'Logged Out Successfully'
+        this.$router.push('/')
       })
     }
   }

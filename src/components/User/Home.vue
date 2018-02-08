@@ -40,15 +40,11 @@
                 </v-card-media>
                 <v-card-title>
                 <div>
-                    <span class="grey--text">Number 10</span><br>
+                    <span class="recipe-title">{{recipes.name}}</span><br>
                     <span><strong>Price</strong> {{recipes.Pfull}}</span><br>
                     <span>Whitsunday Island, Whitsunday Islands</span>
                 </div>
                 </v-card-title>
-                <v-card-actions>
-                <v-btn flat color="orange">Share</v-btn>
-                <v-btn flat color="orange">Explore</v-btn>
-                </v-card-actions>
             </v-card>
         </v-flex>
       </v-layout>
@@ -110,6 +106,12 @@ export default {
 .carousel{
     margin-top: 60px;
     margin-bottom: 20px;
+}
+.recipe-title {
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: brown;
 }
 .categories h2{
     font-size: 20px;
