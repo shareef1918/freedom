@@ -165,20 +165,20 @@ export default {
     ])
   },
   methods: {
-      addItem (item) {
-        this.$store.dispatch('addItem', item)
-        .then((data)=>{
-            this.snackbar = true
-            this.message = "Cart Updated Successfully"
-        })
-      },
-      placeOrder(){
-          console.log(this.$store.state.isLoggedIn)
-          this.$store.dispatch('placeOrder')
-          .then((data)=> {
-              console.log(data)
-          })
-      }
+    addItem (item) {
+      this.$store.dispatch('addItem', item)
+      .then((data) =>{
+        this.snackbar = true
+        this.message = 'Cart Updated Successfully'
+      })
+    },
+    placeOrder(){
+      this.$store.dispatch('placeOrder')
+      .then((data) => {
+        this.snackbar = true
+        this.message = 'Your Order Successfully'
+      })
+    }
   },
   components: { Header, Footer, Home }
 }

@@ -50,9 +50,9 @@
 
 </template>
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
-  data() {
+  data () {
     return {
       pagination: {
         sortBy: 'name'
@@ -66,7 +66,7 @@ export default {
         },
         { text: 'Email', value: 'email' },
         { text: 'Phone Number', value: 'pNumber' },
-        { text: 'Total Orders', value: 'tOrders' },
+        { text: 'Total Orders', value: 'tOrders' }
       ],
       items: [
         {
@@ -74,24 +74,24 @@ export default {
           name: 'Tarique',
           email: 'tariquehussain@xyz.com',
           pNumber: 9804551286,
-          tOrders: 20,
+          tOrders: 20
         },
         {
           value: false,
           name: 'Mastann',
           email: 'mastannSayyed@xtz.com',
           pNumber: 9980765342,
-          tOrders: 500,
-        },
+          tOrders: 500
+        }
       ]
     }
   },
   methods: {
-    toggleAll() {
+    toggleAll () {
       if (this.selected.length) this.selected = []
       else this.selected = this.items.slice()
     },
-    changeSort(column) {
+    changeSort (column) {
       if (this.pagination.sortBy === column) {
         this.pagination.descending = !this.pagination.descending
       } else {
@@ -104,6 +104,6 @@ export default {
     ...mapGetters([
       'users'
     ])
-  },
+  }
 }
 </script>

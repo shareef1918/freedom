@@ -1,18 +1,13 @@
-import state from "./state";
 
 export default {
   carousels: state => {
     return state.carousels
   },
-  menuForToday: state => state.menuForToday,
   recipes: state => {
     return state.recipes
   },
   features: state => {
     return state.features
-  },
-  isLoggedIn: state => {
-    return state.isLoggedIn
   },
   users: state => {
     return state.users

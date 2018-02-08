@@ -39,11 +39,10 @@
 </template>
 <script>
 import {
-  mapActions,
   mapGetters
 } from 'vuex'
 export default {
-  data() {
+  data () {
     return {
       pagination: {
         sortBy: 'name'
@@ -84,24 +83,24 @@ export default {
     })
   },
   methods: {
-    setMenuForLunch() {
+    setMenuForLunch () {
       this.$store.dispatch('setMenuForLunch', this.selected)
         .then((data) => {
-          this.snackbar = true;
+          this.snackbar = true
 
         })
     },
-    setMenuForDinner() {
+    setMenuForDinner () {
       this.$store.dispatch('setMenuForDinner', this.selected)
         .then((data) => {
-          this.snackbar = true;
+          this.snackbar = true
         })
     },
-    toggleAll() {
+    toggleAll () {
       if (this.selected.length) this.selected = []
       else this.selected = this.items.slice()
     },
-    changeSort(column) {
+    changeSort (column) {
       if (this.pagination.sortBy === column) {
         this.pagination.descending = !this.pagination.descending
       } else {
