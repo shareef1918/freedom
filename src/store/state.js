@@ -69,8 +69,55 @@ export default {
     tOrders: 33,
   }],
   menuForToday:{
-    lunch: [],
-    dinner: []
+    lunch: [{
+      src: 'http://hdwallpapers.move.pk/wp-content/uploads/2015/02/hot-pizza.jpg',
+      name: 'Honeycomb',
+      Phalf: 408,
+      Pfull: 1000,
+      units: 87,
+      tOrders: 33,
+    },
+    {
+      src: 'http://www.smartcityfood.in/media/catalog/product/cache/24/image/800x600/f31b0cfd465b5145025020710a9577fb/c/h/chicken-pakoda.jpg',
+      name: 'Lollipop',
+      Phalf: 392,
+      Pfull: 900,
+      units: 98,
+      tOrders: 70,
+    },
+    {
+      src: 'https://www.cicis.com/media/1413/2ppr_websitecarousel_3200x1992.jpg?width=1920&quality=50',
+      name: 'Pizza',
+      Phalf: 280,
+      Pfull: 170,
+      units: 200,
+      tOrders: 80,
+
+    },
+    {
+      src: 'http://wirally.com/wp-content/uploads/2016/01/hdwallpaperbackgrounds-net-534x300.jpg',
+      name: 'Gingerbread',
+      Phalf: 356,
+      Pfull: 700,
+      units: 49,
+      tOrders: 89,
+    }],
+    dinner: [{
+      src: 'https://www.kayemfoods.com/images/default-source/kayem-foods-carousel/corp-websiteredesign_carousel-r6-af.jpg?sfvrsn=0',
+      name: 'Ice cream sandwich',
+      Phalf: 237,
+      Pfull: 150,
+      units: 500,
+      tOrders: 90,
+    },
+    {
+      src: 'http://hdwallpapers.move.pk/wp-content/uploads/2015/02/hot-pizza.jpg',
+      name: 'Honeycomb',
+      Phalf: 408,
+      Pfull: 1000,
+      units: 87,
+      tOrders: 33,
+    }]
   },
   features: [{
     src: 'https://cdn3.iconfinder.com/data/icons/complete-set-icons/512/graph.png',
