@@ -68,10 +68,10 @@ export default {
       tOrders: 33,
     }
   ],
-  menuForToday: [{
+  menuForToday:{
     lunch: [],
     dinner: []
-  }],
+  },
   features: [{
       src: 'https://cdn3.iconfinder.com/data/icons/complete-set-icons/512/graph.png',
       text: 'India\'s Fastest Growing Food Start-up'
