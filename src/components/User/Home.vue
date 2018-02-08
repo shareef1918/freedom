@@ -86,7 +86,6 @@
 </template>
 
 <script>
-<<<<<<< HEAD
   import {
     mapActions,
     mapGetters
@@ -106,19 +105,6 @@
     },
     methods: mapActions([
       'increment'
-=======
-import {mapActions, mapGetters} from 'vuex'
-
-export default {
-  name: 'Home',
-  computed: {
-    ...mapGetters([
-      'carousels',
-      'recipes',
-      'features',
-      'menuForToday',
-      'isLoggedIn'
->>>>>>> 4945a2a192d9113f6c726b35068c2771502a43e7
     ])
   }
 

@@ -48,22 +48,19 @@
             </v-list>
             <v-btn color="primary" block @click="placeOrder()">Place Order</v-btn>
          </v-navigation-drawer>
-         <div v-if="menuForToday.length>0">
+         <div>
          <v-tabs fixed>
             <v-tabs-bar class="cyan" dark>
                <v-tabs-slider class="yellow"></v-tabs-slider>
-               <v-tabs-item class="tab-items" :href="'#tab-1'">
-                  Lunch
-               </v-tabs-item>
-               <v-tabs-item class="tab-items" :href="'#tab-2'">
-                  Dinner
+               <v-tabs-item v-for="(value,key,index) in menuForToday" class="tab-items" :key="index" :href="'#tab-'+index">
+                  {{key}}
                </v-tabs-item>
             </v-tabs-bar>
             <v-tabs-items>
-               <v-tabs-content :id="'tab-1'">
+               <v-tabs-content  v-for="(value,key,index) in menuForToday" :key="index" :id="'tab-'+index">
                   <v-card flat>
                      <v-layout row wrap>
-                        <v-flex xs12 sm6 lg3 md3 v-for="(recipes,i) in menuForToday[0]['lunch']" v-bind:src="i" :key="i">
+                        <v-flex xs12 sm6 lg3 md3 v-for="(recipes,i) in value" v-bind:src="i" :key="i">
                            <v-card>
                               <v-card-media
                                  class="white--text"
@@ -86,40 +83,7 @@
                                  </div>
                               </v-card-title>
                               <v-card-actions>
-                                <v-btn color="red" block class="add-btn" @click="addItem(recipes)">Add</v-btn>
-                              </v-card-actions>
-                           </v-card>
-                        </v-flex>
-                     </v-layout>
-                  </v-card>
-               </v-tabs-content>
-               <v-tabs-content :id="'tab-2'">
-                  <v-card flat>
-                     <v-layout row wrap>
-                        <v-flex xs12 sm6 lg3 md3 v-for="(recipes,i) in menuForToday[0]['dinner']" v-bind:src="i" :key="i">
-                           <v-card>
-                              <v-card-media
-                                 class="white--text"
-                                 height="200px"
-                                 v-bind:src="recipes.src"
-                                 >
-                                 <v-container fill-height fluid>
-                                    <v-layout fill-height>
-                                       <v-flex xs12 align-end flexbox>
-                                          <span class="headline">{{recipes.name}}</span>
-                                       </v-flex>
-                                    </v-layout>
-                                 </v-container>
-                              </v-card-media>
-                              <v-card-title>
-                                 <div>
-                                    <span class="recipe-title">{{recipes.name}}</span><br>
-                                    <span>Price : {{recipes.Pfull}}</span><br>
-                                    <span>Whitsunday Island, Whitsunday Islands</span>
-                                 </div>
-                              </v-card-title>
-                              <v-card-actions>
-                                <v-btn color="red" block class="add-btn" @click="addItem(recipes)">Add</v-btn>
+                                <v-btn color="red" block class="add-btn" @click="addItem(recipes,key)">Add</v-btn>
                               </v-card-actions>
                            </v-card>
                         </v-flex>
@@ -129,9 +93,6 @@
             </v-tabs-items>
          </v-tabs>
          </div>
-         <div v-else>
-             Menu Not Available.
-        </div>
       </v-container>
       <Footer></Footer>
    </v-app>
@@ -144,64 +105,65 @@ import Home from '../User/Home'
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'Order',
-  data () {
-    return {
-      snackbar: false,
-      message: null,
-      drawer: false,
-      timeout: 3000,
-      items: ['Lunch', 'Dinner'],
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-    }
-  },
-  computed: {
-    ...mapGetters([
-      'recipes',
-      'menuForToday',
-      'cartData',
-      'grandTotal',
-      'isLoggedIn'
-    ])
-  },
-  methods: {
-      addItem (item) {
-        this.$store.dispatch('addItem', item)
-        .then((data)=>{
-            this.snackbar = true
-            this.message = "Cart Updated Successfully"
-        })
-      },
-      placeOrder(){
-          console.log(this.$store.state.isLoggedIn)
-          this.$store.dispatch('placeOrder')
-          .then((data)=> {
-              console.log(data)
-          })
-      }
-  },
-  components: { Header, Footer, Home }
+    name: 'Order',
+    data() {
+        return {
+            snackbar: false,
+            message: null,
+            drawer: false,
+            timeout: 3000,
+            items: ['Lunch', 'Dinner'],
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        }
+    },
+    computed: {
+        ...mapGetters([
+            'recipes',
+            'menuForToday',
+            'cartData',
+            'grandTotal',
+            'isLoggedIn'
+        ])
+    },
+    methods: {
+        addItem(item, type) {
+            item.type = type;
+            this.$store.dispatch('addItem', item)
+                .then((data) => {
+                    this.snackbar = true
+                    this.message = "Cart Updated Successfully"
+                })
+        },
+        placeOrder() {
+            console.log(this.$store.state.isLoggedIn)
+            this.$store.dispatch('placeOrder')
+                .then((data) => {
+                    console.log(data)
+                })
+        }
+    },
+    components: { Header, Footer, Home }
 }
 </script>
 
 <style scoped>
-.content{
-    margin-top: 60px !important;
+.content {
+  margin-top: 60px !important;
 }
-.tab-items{
-    font-weight: bold !important;
+.tab-items {
+  font-weight: bold !important;
 }
-.recipe-title{
-    font-size:15px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: brown;
+.recipe-title {
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: brown;
 }
-.add-btn{
-    color: #fff;
-    font-weight: bold;
+.add-btn {
+  color: #fff;
+  font-weight: bold;
 }
-.flex{
-    padding: 10px;
+.flex {
+  padding: 10px;
 }
 </style>
