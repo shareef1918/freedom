@@ -32,23 +32,23 @@ export default {
     }
     return false
   },
-  logoutUser ( {commit, state}) {
-    commit('loggedIn',false)
+  logoutUser ({commit, state}) {
+    commit('loggedIn', false)
     commit('userDetails', null)
     return true
   },
-  addItem ( {commit, state}, item) {
+  addItem ({commit, state}, item) {
     let index = _.findIndex(state.cart, (cartItem) => {
       return cartItem.name === item.name
-    })  
-    if ( index > -1 ) {
+    })
+    if (index > -1) {
       item.quantity = Number(item.quantity) + 1
-      commit('updateItem',{item: item,index:index})
+      commit('updateItem', {item: item, index: index})
     } else {
       item.quantity = 1
-      commit('addItem',item)
+      commit('addItem', item)
     }
-    let total = 0;
+    let total = 0
     _.each(state.cart, (cartItem) => {
       total += Number(cartItem.quantity) * Number(cartItem.Pfull)
     })
@@ -57,10 +57,10 @@ export default {
   },
   placeOrder ({commit, state}) {
     let order = {}
-    order.id = _.random(20000,10000000)
+    order.id = _.random(20000, 10000000)
     order.createdAt = new Date()
     order.items = state.cart
-    order.user = state.userDetails? state.userDetails[0]:null
+    order.user = state.userDetails ? state.userDetails[0] : null
     commit('placeOrder', order)
   }
 }

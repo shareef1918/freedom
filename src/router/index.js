@@ -13,45 +13,47 @@ Vue.use(Router)
 
 export default new Router({
   routes: [{
-      path: '/',
-      name: 'user-dashboard',
-      component: UserDashboard,
-      children: []
+    path: '/',
+    name: 'user-dashboard',
+    component: UserDashboard,
+    children: []
+  },
+  {
+    path: '/order',
+    name: 'order',
+    component: Order
+  },
+  {
+    path: '/admin',
+    name: 'admin-dashboard',
+    redirect: {
+    name: 'admin-home'
+  },
+    component: AdminDashboard,
+    children: [{
+      path: 'home',
+      name: 'admin-home',
+      component: AdminHome
+    }, 
+    {
+      path: 'menu',
+      name: 'admin-menu',
+      component: AdminMenu
+    }, 
+    {
+      path: 'users',
+      name: 'users',
+      component: Users
+    }, 
+    {
+      path: 'offers',
+      name: 'offers',
+      component: Offers
     },
     {
-      path: '/order',
-      name: 'order',
-      component: Order 
-    },
-    {
-      path: '/admin',
-      name: 'admin-dashboard',
-      redirect: {
-        name: 'admin-home'
-      },
-      component: AdminDashboard,
-      children: [{
-        path: 'home',
-        name: 'admin-home',
-        component: AdminHome
-      }, {
-        path: 'menu',
-        name: 'admin-menu',
-        component: AdminMenu
-      }, {
-        path: 'users',
-        name: 'users',
-        component: Users
-      }, 
-      {
-        path: 'offers',
-        name: 'offers',
-        component: Offers
-      },{
-        path: 'analytics',
-        name: 'analytics',
-        component: Analytics
-      }]
-    }
-  ]
+      path: 'analytics',
+      name: 'analytics',
+      component: Analytics
+    }]
+  }]
 })

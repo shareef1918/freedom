@@ -1,4 +1,3 @@
-import state from './state'
 
 export default {
   increment (state) {
@@ -22,15 +21,15 @@ export default {
   addItem (state, item) {
     state.cart.push(item)
   },
-  updateItem (state, data ){
+  updateItem (state, data) {
     state.cart[data.index] = data.item
   },
-  updateCartTotal (state, total){
+  updateCartTotal (state, total) {
     state.grandTotal = total
   },
-  placeOrder ( state, order) {
-    state.orders.push(order);
-    state.cart = [];
+  placeOrder (state, order) {
+    state.orders.push(order)
+    state.cart = []
     state.grandTotal = 0
   }
 }
