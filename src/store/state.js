@@ -1,7 +1,9 @@
 export default {
-  count: 10,
   isLoggedIn: false,
   userDetails: null,
+  cart: [],
+  grandTotal: null,
+  orders: [],
   recipes: [{
       src: 'https://www.cicis.com/media/1413/2ppr_websitecarousel_3200x1992.jpg?width=1920&quality=50',
       name: 'Pizza',

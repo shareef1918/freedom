@@ -22,5 +22,17 @@ export default {
   },
   userDetails: state => {
     return state.userDetails
+  },
+  menuForToday: state => {
+    return state.menuForToday
+  },
+  cartData: state => {
+    return state.cart
+  },
+  grandTotal: state => {
+    return state.grandTotal
+  },
+  orders: state => {
+    return state.orders
   }
 }
