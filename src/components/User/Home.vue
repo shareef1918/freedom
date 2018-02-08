@@ -5,7 +5,7 @@
         <v-carousel-item v-for="(carousel,i) in carousels" v-bind:src="carousel.src" :key="i"></v-carousel-item>
     </v-carousel>
     <div class="categories">
-        <h2>CATEGORIES</h2>
+        <h2>RECIPES</h2>
     </div>
     <div>
       <v-layout row wrap>
@@ -56,7 +56,7 @@
   <div class="first-order-div" xs12 sm12 lg12 md12 >
       <v-layout row wrap>
         <v-flex xs12 sm6 lg3 md3 class="phone-pic">
-             <img src="http://box8.in/images/phone.2a6bf9f7.png"/>
+             <img src="http://www.gocibo.in/images/banner-mobiles1.png" height="180px"/>
         </v-flex>
         <v-flex xs12 sm6 lg3 md3>
             <p class="offers-p">Avail attractive offers on your first order. Order today!</p>
@@ -113,6 +113,7 @@ export default {
 }
 .feature-img{
     width: 40%;
+    height: 40%;
 }
 .first-order-div{
     background: #da3939;
@@ -125,7 +126,7 @@ export default {
     color: #fff;
 }
 .phone-pic{
-    padding-left: 10%;
+    padding-left: 8%;
 }
 .store img{
     height: 150px;

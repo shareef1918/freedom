@@ -4,8 +4,10 @@
     <v-spacer></v-spacer>
     <v-toolbar-side-icon class="hidden-md-and-up" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
     <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat @click.native.stop="registerDialog = true">Sign UP</v-btn>
-      <v-btn flat @click.native.stop="loginDialog = true">Sign In</v-btn>
+      <v-btn flat v-if="!isLoggedIn" @click.native.stop="registerDialog = true;resetRegForm()">Sign UP</v-btn>
+      <v-btn flat v-if="!isLoggedIn" @click.native.stop="loginDialog = true; resetLoginForm()">Sign In</v-btn>
+      <v-btn flat v-if="isLoggedIn">Welcome: {{userDetails[0].name}}</v-btn>
+      <v-btn flat v-if="isLoggedIn" @click="logout">Logout</v-btn>
       <v-btn flat @click.native.stop="offers = true">Offers</v-btn>
     </v-toolbar-items>
 
@@ -115,6 +117,8 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
+
 export default {
   name: 'Header',
   data () {
@@ -153,7 +157,19 @@ export default {
       ]
     }
   },
+  computed: {
+    ...mapGetters([
+      'isLoggedIn',
+      'userDetails'
+    ])
+  },
   methods: {
+    resetRegForm(){
+      this.$refs.regForm.reset()
+    },
+    resetLoginForm(){
+      this.$refs.loginForm.reset()
+    },
     signup () {
       if (this.$refs.regForm.validate()) {
         let userObj = {
@@ -162,9 +178,16 @@ export default {
           password: this.password
         }
         this.$store.dispatch('registerUser', userObj)
-        this.registerDialog = false
-        this.snackbar = true
-        this.message = 'Registered Successfully'
+        .then((data) => {
+          if(data){
+            this.registerDialog = false
+            this.snackbar = true
+            this.message = 'Registered Successfully'
+          } else {
+            this.snackbar = true
+            this.message = 'Email Already Registered'
+          }
+        })
       }
     },
     signin () {
@@ -175,16 +198,24 @@ export default {
         }
         this.$store.dispatch('loginUser', userObj)
         .then((data) => {
-          if (data.length) {
+          if (data) {
             this.snackbar = true
             this.message = 'LoggedIn Successfully'
             this.loginDialog = false
+            this.$refs.loginForm.reset()
           } else {
             this.snackbar = true
             this.message = 'Please Provide Valid Credentials'
           }
         })
       }
+    },
+    logout () {
+      this.$store.dispatch('logoutUser')
+      .then((data) => {
+        this.snackbar = true
+        this.message = 'Logged Out Successfully'
+      })
     }
   }
 }

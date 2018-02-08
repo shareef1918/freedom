@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Footer</h3>
+    <h3>All Rights Reserved</h3>
   </div>
 </template>
 
@@ -10,6 +10,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

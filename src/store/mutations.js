@@ -4,5 +4,11 @@ export default {
   },
   registerUser (state, payload) {
     state.users.push(payload)
+  },
+  loggedIn (state, payload) {
+    state.isLoggedIn = payload
+  },
+  userDetails (state, user) {
+    state.userDetails = user
   }
 }
