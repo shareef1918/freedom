@@ -134,11 +134,18 @@ export default {
       })
     },
     placeOrder(){
-      this.$store.dispatch('placeOrder')
-      .then((data) => {
+      if(this.$store.getters.isLoggedIn){
+        this.$store.dispatch('placeOrder')
+        .then((data) => {
+            this.snackbar = true
+            this.message = 'Your Order Successfully'
+            this.$router.push('/')
+        })
+      } else {
         this.snackbar = true
-        this.message = 'Your Order Successfully'
-      })
+        this.message = 'Please Login To Place Your Order'
+        return
+      }
     }
   },
   components: { Header, Footer, Home }
