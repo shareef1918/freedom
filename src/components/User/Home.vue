@@ -33,7 +33,7 @@
                 <v-container fill-height fluid>
                     <v-layout fill-height>
                     <v-flex xs12 align-end flexbox>
-                        <span class="headline">Top 10 Australian beaches</span>
+                        <span class="headline">{{recipes.name}}</span>
                     </v-flex>
                     </v-layout>
                 </v-container>
@@ -41,7 +41,7 @@
                 <v-card-title>
                 <div>
                     <span class="grey--text">Number 10</span><br>
-                    <span>Whitehaven Beach</span><br>
+                    <span><strong>Price</strong> {{recipes.Pfull}}</span><br>
                     <span>Whitsunday Island, Whitsunday Islands</span>
                 </div>
                 </v-card-title>
@@ -97,6 +97,7 @@ export default {
       'recipes',
       'features',
       'count',
+      'menuForToday',
       'isLoggedIn'
     ])
   },

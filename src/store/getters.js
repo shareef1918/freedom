@@ -1,7 +1,10 @@
+import state from "./state";
+
 export default {
   carousels: state => {
     return state.carousels
   },
+  menuForToday: state => state.menuForToday,
   recipes: state => {
     return state.recipes
   },
@@ -15,9 +18,9 @@ export default {
     return state.users
   },
   isLoggedIn: state => {
-      return state.isLoggedIn
+    return state.isLoggedIn
   },
   userDetails: state => {
-      return state.userDetails
+    return state.userDetails
   }
 }
